@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
 // React Router DOM
@@ -11,25 +11,13 @@ import ProductItem from "./components/ProductItem/ProductItem";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-
   return (
     <>
       <Navbar />
       <Routes>
         <Route index path="/" element={<BannerSection />} />
-        <Route
-          path="/product/:id"
-          element={
-            <ProductItem cartItems={cartItems} setCartItems={setCartItems} />
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />
-          }
-        />
+        <Route path="/product/:id" element={<ProductItem />} />
+        <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
     </>
   );

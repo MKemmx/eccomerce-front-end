@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import "./ProductItemCSS.css";
 
 // React Router DOM
@@ -14,16 +13,12 @@ import { useCartState } from "../../store/CartStore";
 // AXIOS
 import axios from "axios";
 
-const ProductItem = ({ cartItems, setCartItems }) => {
+const ProductItem = () => {
   let { id } = useParams();
-
   // Global Cart State
-  const { cart } = useCartState((state) => state);
-  console.log(cart);
-
+  const { addToCart } = useCartState((state) => state);
   // Item Quantity
   const [quantity, setQuantity] = useState(1);
-
   //   Main State
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -41,28 +36,6 @@ const ProductItem = ({ cartItems, setCartItems }) => {
       console.log(error);
       setLoading(false);
     }
-  };
-
-  // Add To Cart Functionality
-  const addToCart = () => {
-    if (quantity > 50) return alert("You are over minimum purchase!");
-    // Check if item exist in cart
-    const exist = cartItems.find((element) => element.id === data.id);
-    // Item not exist then add the quantity
-    if (!exist) return setCartItems([...cartItems, { ...data, qty: quantity }]);
-
-    // Check if order in cart is greater than 50
-    if (exist.qty > 50 || exist.qty + quantity > 50)
-      return alert("You are over minimum purchase!");
-
-    //  Add to cart with the quantity
-    setCartItems(
-      cartItems.map((cartItem) =>
-        cartItem.id === exist.id
-          ? { ...cartItem, qty: cartItem.qty + quantity }
-          : cartItem
-      )
-    );
   };
 
   useEffect(() => {
@@ -103,7 +76,12 @@ const ProductItem = ({ cartItems, setCartItems }) => {
                   setQuantity(parseInt(event.target.value));
                 }}
               />
-              <button onClick={addToCart} className="cart-button">
+              <button
+                onClick={() => {
+                  addToCart(quantity, data);
+                }}
+                className="cart-button"
+              >
                 Add to Cart
               </button>
             </div>
