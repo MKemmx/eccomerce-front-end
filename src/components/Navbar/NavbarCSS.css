@@ -1,0 +1,44 @@
+.navbar {
+  width: 100%;
+  background-color: #ecdbd7;
+}
+
+.navbar-container {
+  width: 1400px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.list-item {
+  padding-right: 30px;
+  color: #222;
+  list-style: none;
+  font-weight: 600;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.badge {
+  background-color: rgb(228, 23, 23);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}

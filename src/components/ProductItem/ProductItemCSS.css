@@ -1,0 +1,38 @@
+.product-item {
+  width: 1400px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 50px;
+}
+
+.product-box2 {
+  padding: 40px 20px 40px 50px;
+  flex: 1;
+}
+
+.product-category,
+.product-price,
+.product-input-container {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.product-input {
+  width: 60px;
+  padding: 8px 10px;
+}
+
+.cart-button {
+  padding: 8px 13px;
+  margin-left: 20px;
+}
+
+.product-details {
+  margin-top: 30px;
+}
+
+.product-details p {
+  line-height: 22px;
+}
