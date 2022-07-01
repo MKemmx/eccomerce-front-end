@@ -36,7 +36,7 @@ const cartStore = (set, get) => ({
     if (!exist) return;
 
     //! Remove if qty equals 1 or below
-    if (exist.qty <= 1)
+    if (exist.qty <= 1 || isNaN(exist.qty))
       return set({
         cart: cartItems.filter((cartItem) => cartItem.id !== id),
       });

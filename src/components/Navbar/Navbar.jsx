@@ -4,12 +4,13 @@ import "./NavbarCSS.css";
 // React Router DOM
 import { Link } from "react-router-dom";
 // Icons
-import { FaLaptop } from "react-icons/fa";
+import { FaLaptop, FaSearch, FaRegUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 // MENU lists
 import { menulists } from "../../utls/menulist";
 
+// Cart State
 import { useCartState } from "../../store/CartStore";
 
 const Navbar = () => {
@@ -33,8 +34,14 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="navbar-settings">
+          <div className="icon-div">
+            <FaSearch className="icon" color="#222" size={18} />
+          </div>
+          <div className="icon-div">
+            <FaRegUser className="icon" color="#222" size={22} />
+          </div>
           <Link className="cart-icon" to={`/cart`}>
-            <AiOutlineShoppingCart color="#222" size={28} />
+            <AiOutlineShoppingCart color="#222" size={25} />
             {!cart.length <= 0 && <div className="badge"> {cart.length} </div>}
           </Link>
         </div>

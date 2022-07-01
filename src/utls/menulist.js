@@ -1,9 +1,5 @@
 export const menulists = [
   {
-    name: "Home",
-    to: "/",
-  },
-  {
     name: "Products",
     to: "/products",
   },
@@ -12,7 +8,7 @@ export const menulists = [
     to: "/about",
   },
   {
-    name: "Contact",
+    name: "Contact Us",
     to: "/contact",
   },
 ];
