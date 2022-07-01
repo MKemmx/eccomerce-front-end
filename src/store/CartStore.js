@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const cartStore = (set, get) => ({
   cart: [],
-  addToCart: (quantity, data) => {
+  addToCart: (quantity = 1, data) => {
     const cartItems = get().cart;
     if (quantity > 50)
       return Swal.fire("Error", "Minimum order is only 50 bellow!", "error");
