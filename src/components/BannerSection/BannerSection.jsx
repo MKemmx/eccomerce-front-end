@@ -52,7 +52,6 @@ const BannerSection = () => {
           <div className="banner-box-2"></div>
         </div>
       </section>
-
       <Products />
     </>
   );

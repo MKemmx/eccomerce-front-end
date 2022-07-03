@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 
 // CartState
 import { useCartState } from "../../store/CartStore";
+// Icons
 import { AiFillStar } from "react-icons/ai";
 
 // AXIOS

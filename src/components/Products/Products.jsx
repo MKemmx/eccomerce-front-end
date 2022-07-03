@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ProductsCSS.css";
 
+// React Router DOM
 import { Link, useNavigate } from "react-router-dom";
 
 // Import AXIOS
@@ -9,7 +10,6 @@ import Loading from "../Loading/Loading";
 
 const Products = () => {
   let navigate = useNavigate();
-
   const categories = [
     "all",
     "electronics",
