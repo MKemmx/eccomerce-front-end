@@ -1,0 +1,12 @@
+.about {
+  width: 100%;
+}
+
+.about-container {
+  width: 1400px;
+  margin-inline: auto;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -8,7 +8,7 @@ export const menulists = [
     to: "/about",
   },
   {
-    name: "Contact Us",
+    name: "Contact",
     to: "/contact",
   },
 ];

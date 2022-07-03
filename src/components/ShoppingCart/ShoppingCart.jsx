@@ -8,8 +8,14 @@ import { BsTrash } from "react-icons/bs";
 import { useCartState } from "../../store/CartStore";
 
 const ShoppingCart = () => {
-  const { cart, subtractItemQTY, addItemQTY, changeItemQTY, removeToCart } =
-    useCartState((state) => state);
+  const {
+    cart,
+    subtractItemQTY,
+    addItemQTY,
+    changeItemQTY,
+    removeToCart,
+    sendOrder,
+  } = useCartState((state) => state);
   const itemsPrice = cart.reduce(
     (total, item) => total + item.price * item.qty,
     0
@@ -109,7 +115,9 @@ const ShoppingCart = () => {
               </div>
 
               <div className="shoppingcart-button-container">
-                <button className="shoppingcart-button">Go To Checkout</button>
+                <button onClick={sendOrder} className="shoppingcart-button">
+                  Go To Checkout
+                </button>
               </div>
             </div>
           </div>

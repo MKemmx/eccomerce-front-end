@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
-        <p> &copy; RanTech 2022. All Rights Reserved. </p>
+        <div className="footer-content1">
+          <p> Dummy Eccomerce By &copy; Mark Kemm Asdilla </p>
+        </div>
+        <div className="credits-content">
+          <p> &copy; RanTech 2022. All Rights Reserved. </p>
+        </div>
       </div>
     </div>
   );

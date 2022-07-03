@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import BannerSection from "./components/BannerSection/BannerSection";
 import ProductItem from "./components/ProductItem/ProductItem";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import Products from "./components/Products/Products";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
       <Routes>
         <Route index path="/" element={<BannerSection />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/products" element={<Products />} />{" "}
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductItem />} />
       </Routes>
       <Footer />

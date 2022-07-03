@@ -93,6 +93,12 @@ const cartStore = (set, get) => ({
       cart: removedItem,
     });
   },
+  sendOrder: () => {
+    set({
+      cart: [],
+    });
+    Swal.fire("Success", "Thank you for ordering!", "success");
+  },
 });
 
 export const useCartState = create(
