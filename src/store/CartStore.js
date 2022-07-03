@@ -86,6 +86,13 @@ const cartStore = (set, get) => ({
       ),
     });
   },
+  removeToCart: (id) => {
+    const cartItems = get().cart;
+    const removedItem = cartItems.filter((item) => item.id !== id);
+    set({
+      cart: removedItem,
+    });
+  },
 });
 
 export const useCartState = create(
