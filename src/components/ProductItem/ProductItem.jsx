@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./ProductItemCSS.css";
 
+import { motion } from "framer-motion";
+
 // React Router DOM
 import { useParams } from "react-router-dom";
 
@@ -81,7 +83,12 @@ const ProductItem = () => {
                   setQuantity(parseInt(event.target.value));
                 }}
               />
-              <button
+
+              <motion.button
+                whileHover={{
+                  scale: 1.1,
+                }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   if (isNaN(quantity)) {
                     setQuantity(1);
@@ -92,7 +99,7 @@ const ProductItem = () => {
                 className="cart-button"
               >
                 Add to Cart
-              </button>
+              </motion.button>
             </div>
             <div className="product-details">
               <h3> Details: </h3>

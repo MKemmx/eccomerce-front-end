@@ -1,3 +1,8 @@
+.hamburger-container {
+  display: none;
+  cursor: pointer;
+}
+
 .navbar {
   width: 100%;
 }
@@ -54,4 +59,77 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+
+@media screen and (max-width: 1400px) {
+  .navbar-container {
+    width: 95%;
+    padding: 20px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hamburger-container {
+    display: block;
+  }
+
+  .list-item {
+    padding-bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .icon {
+    color: #fff !important;
+  }
+  .icon-div {
+    padding-right: 20px;
+  }
+
+  .menu-container {
+    height: 25vh;
+    position: absolute;
+    left: 0px;
+    top: -50px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #025962;
+    padding: 20px 30px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .navbar-settings {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 20px 30px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .menu-container.active {
+    top: 100px;
+    opacity: 1;
+    pointer-events: all;
+  }
+  .navbar-settings.active {
+    top: 280px;
+    opacity: 1;
+    pointer-events: all;
+  }
 }

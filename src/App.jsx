@@ -21,7 +21,7 @@ function App() {
         <Route index path="/" element={<BannerSection />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/product/:id" element={<ProductItem />} />{" "}
+        <Route path="/product/:id" element={<ProductItem />} />
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
       <Footer />

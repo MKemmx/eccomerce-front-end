@@ -200,3 +200,74 @@
   text-align: center;
   padding: 70px 0;
 }
+
+@media screen and (max-width: 1400px) {
+  .fshopping-cart-container {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .fshopping-cart-container {
+    width: 95%;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .fshopping-cart-box2 {
+    width: 360px;
+    padding-inline: 15px;
+    justify-self: end;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .card {
+    padding-inline: 0px;
+  }
+
+  .card-image img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .card-category {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .card-name {
+    font-size: 18px;
+    padding-right: 10px;
+  }
+
+  .card-price {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    display: grid;
+    align-items: unset;
+    grid-template-columns: 1fr;
+    background-color: #fff;
+    padding-inline: 10px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+
+  .card-image {
+    display: block;
+    margin-inline: auto;
+  }
+
+  .card-quantity {
+    margin-top: 30px;
+  }
+  .card-button {
+    position: absolute;
+    bottom: 40px;
+  }
+}

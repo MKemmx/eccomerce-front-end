@@ -45,7 +45,6 @@ const ShoppingCart = () => {
               </div>
             ) : (
               <>
-                {" "}
                 <div className="card-container">
                   {cart.map((cartItem) => (
                     <div className="card">
@@ -57,13 +56,13 @@ const ShoppingCart = () => {
                           <p className="card-category">{cartItem.category}</p>
                           <p className="card-name"> {cartItem.title}</p>
                         </div>
-                        <div
-                          onClick={() => {
-                            removeToCart(cartItem.id);
-                          }}
-                          className="card-button"
-                        >
-                          <div className="card-icon-container">
+                        <div className="card-button">
+                          <div
+                            onClick={() => {
+                              removeToCart(cartItem.id);
+                            }}
+                            className="card-icon-container"
+                          >
                             <BsTrash className="card-icon" size={23} />
                             <p>Remove</p>
                           </div>
