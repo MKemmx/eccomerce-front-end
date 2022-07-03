@@ -49,7 +49,12 @@ const BannerSection = () => {
             </p>
             <button className="banner-box1-button">SHOP NOW</button>
           </div>
-          <div className="banner-box-2"></div>
+          <div className="banner-box-2">
+            <img
+              src="https://cdn.shopify.com/s/files/1/2227/7667/t/2/assets/slide-image-2.jpg?v=49930711330538254351656320387"
+              alt=""
+            />
+          </div>
         </div>
       </section>
       <Products />

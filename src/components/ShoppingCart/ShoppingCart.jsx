@@ -39,47 +39,56 @@ const ShoppingCart = () => {
               <h2>Your bag ({cart.length} items) </h2>
             </div>
             {/* Cart Items */}
-            <div className="card-container">
-              {cart.map((cartItem) => (
-                <div className="card">
-                  <div className="card-image">
-                    <img src={cartItem.image} alt={cart.title} />
-                  </div>
-                  <div className="card-details">
-                    <div className="card-context">
-                      <p className="card-category">{cartItem.category}</p>
-                      <p className="card-name"> {cartItem.title}</p>
-                    </div>
-                    <div
-                      onClick={() => {
-                        removeToCart(cartItem.id);
-                      }}
-                      className="card-button"
-                    >
-                      <div className="card-icon-container">
-                        <BsTrash className="card-icon" size={23} />
-                        <p>Remove</p>
+            {cart.length <= 0 ? (
+              <div className="noitem">
+                <h1>No item, order now!</h1>
+              </div>
+            ) : (
+              <>
+                {" "}
+                <div className="card-container">
+                  {cart.map((cartItem) => (
+                    <div className="card">
+                      <div className="card-image">
+                        <img src={cartItem.image} alt={cart.title} />
+                      </div>
+                      <div className="card-details">
+                        <div className="card-context">
+                          <p className="card-category">{cartItem.category}</p>
+                          <p className="card-name"> {cartItem.title}</p>
+                        </div>
+                        <div
+                          onClick={() => {
+                            removeToCart(cartItem.id);
+                          }}
+                          className="card-button"
+                        >
+                          <div className="card-icon-container">
+                            <BsTrash className="card-icon" size={23} />
+                            <p>Remove</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="card-quantity">
+                        <input
+                          onChange={(event) => {
+                            changeItemQTY(
+                              cartItem.id,
+                              parseInt(event.target.value)
+                            );
+                          }}
+                          min="1"
+                          className="card-input"
+                          type="number"
+                          value={cartItem.qty}
+                        />
+                        <p className="card-price"> $ {cartItem.price}</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="card-quantity">
-                    <input
-                      onChange={(event) => {
-                        changeItemQTY(
-                          cartItem.id,
-                          parseInt(event.target.value)
-                        );
-                      }}
-                      min="1"
-                      className="card-input"
-                      type="number"
-                      value={cartItem.qty}
-                    />
-                    <p className="card-price"> $ {cartItem.price}</p>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
           </div>
           {/* Total Container */}
           <div className="fshopping-cart-box2">

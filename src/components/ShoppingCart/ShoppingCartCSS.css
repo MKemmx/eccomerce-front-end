@@ -194,3 +194,9 @@
 .shoppingcart-button:hover {
   background-color: #da6817;
 }
+
+.noitem {
+  width: 100%;
+  text-align: center;
+  padding: 70px 0;
+}

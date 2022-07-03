@@ -64,10 +64,49 @@
 }
 
 .banner-box-2 {
-  background-image: url("https://cdn.shopify.com/s/files/1/2227/7667/t/2/assets/slide-image-2.jpg?v=49930711330538254351656320387");
   height: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-box-2 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1400px) {
+  .banner-container {
+    width: 95%;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .banner-container {
+    flex-direction: column;
+  }
+
+  .banner-box-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .banner-box-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .banner-box-1 {
+    padding: 20px 0px;
+  }
 }
