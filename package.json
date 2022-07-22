@@ -16,6 +16,7 @@
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.3.5",
     "react-router-dom": "^6.3.0",
+    "react-toastify": "^9.0.7",
     "sweetalert2": "^11.4.19",
     "zustand": "^4.0.0-rc.1"
   },

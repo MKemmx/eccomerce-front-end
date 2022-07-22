@@ -98,6 +98,16 @@ const cartStore = (set, get) => ({
     });
   },
   sendOrder: () => {
+    const cart = get().cart;
+
+    if (cart.length <= 0) {
+      return Swal.fire(
+        "Purchase failed",
+        "You don't have any order yet!",
+        "error"
+      );
+    }
+
     set({
       cart: [],
     });

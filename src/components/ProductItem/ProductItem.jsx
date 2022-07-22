@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 // Loading Component
 import Loading from "../Loading/Loading";
-
+import { toast } from "react-toastify";
 // CartState
 import { useCartState } from "../../store/CartStore";
 // Icons
@@ -95,6 +95,15 @@ const ProductItem = () => {
                     return addToCart(1, data);
                   }
                   addToCart(quantity, data);
+                  toast.success("Item added to cart!", {
+                    position: "top-right",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
                 }}
                 className="cart-button"
               >

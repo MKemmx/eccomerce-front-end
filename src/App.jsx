@@ -1,6 +1,10 @@
 import React from "react";
 import "./App.css";
 
+// Toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // React Router DOM
 import { Routes, Route } from "react-router-dom";
 
@@ -16,6 +20,7 @@ import About from "./components/About/About";
 function App() {
   return (
     <>
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route index path="/" element={<BannerSection />} />
