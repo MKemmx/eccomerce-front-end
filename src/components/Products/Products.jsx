@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./ProductsCSS.css";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 // React Router DOM
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Import AXIOS
 import axios from "axios";
 import Loading from "../Loading/Loading";
+import Product from "./Product";
 
 const Products = () => {
-  let navigate = useNavigate();
   const categories = [
     "all",
     "electronics",
@@ -18,7 +20,6 @@ const Products = () => {
     "women's clothing",
   ];
   const [selectedCategory, setSelectedCategory] = useState("all");
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const fetchProducts = async () => {
@@ -63,61 +64,23 @@ const Products = () => {
           </select>
         </div>
       </div>
-      <div className="product-container">
-        {selectedCategory === "all" ? (
-          <>
-            {data.map((item) => (
-              <div
-                onClick={() => {
-                  navigate(`/product/${item.id}`);
-                }}
-                key={item.id}
-                className="product-box"
-              >
-                <img
-                  className="product-image"
-                  src={item.image}
-                  alt={item.name}
-                />
-                <div className="product-name">
-                  <h3 className="product-category">{item.category}</h3>
-                  <p className="product-title"> {item.title} </p>
-                  <Link to={`/product/${item.id}`}>
-                    <p className="view-btn">View More!</p>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </>
-        ) : (
-          <>
-            {data
-              .filter((product) => product.category === selectedCategory)
-              .map((item) => (
-                <div
-                  onClick={() => {
-                    navigate(`/product/${item.id}`);
-                  }}
-                  key={item.id}
-                  className="product-box"
-                >
-                  <img
-                    className="product-image"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <div className="product-name">
-                    <h3 className="product-category">{item.category}</h3>
-                    <p className="product-title"> {item.title} </p>
-                    <Link to={`/product/${item.id}`}>
-                      <p className="view-btn">View More!</p>
-                    </Link>
-                  </div>
-                </div>
+      <motion.div layout className="product-container">
+        <AnimatePresence>
+          {selectedCategory === "all" && (
+            <>
+              {data.map((item) => (
+                <Product item={item} />
               ))}
-          </>
-        )}
-      </div>
+            </>
+          )}
+
+          {data
+            .filter((product) => product.category === selectedCategory)
+            .map((item) => (
+              <Product item={item} />
+            ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 };

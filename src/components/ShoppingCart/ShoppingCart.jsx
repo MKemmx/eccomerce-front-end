@@ -69,6 +69,15 @@ const ShoppingCart = () => {
                         </div>
                       </div>
                       <div className="card-quantity">
+                        <button
+                          onClick={() => {
+                            subtractItemQTY(cartItem.id);
+                          }}
+                          className="shopping-cart-btn"
+                        >
+                          -
+                        </button>
+
                         <input
                           onChange={(event) => {
                             changeItemQTY(
@@ -81,6 +90,15 @@ const ShoppingCart = () => {
                           type="number"
                           value={cartItem.qty}
                         />
+
+                        <button
+                          onClick={() => {
+                            addItemQTY(cartItem, cartItem.id);
+                          }}
+                          className="shopping-cart-btn"
+                        >
+                          +
+                        </button>
                         <p className="card-price"> $ {cartItem.price}</p>
                       </div>
                     </div>

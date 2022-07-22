@@ -50,14 +50,18 @@ const cartStore = (set, get) => ({
   },
   addItemQTY: (data, id) => {
     const cartItems = get().cart;
+    // Check if item alredy exist in cart
     const exist = cartItems.find((cartItem) => cartItem.id === id);
+    // If not add to cart
     if (!exist)
       return set({
         cart: [...cartItems, { ...data, qty: 1 }],
       });
+    // Check if exist item is greater than 50
     if (exist.qty >= 50) {
-      return Swal.fire("Error", "Minimum order is only 50 bellow!", "error");
+      return Swal.fire("Error", "Minimum order is only 50 or bellow!", "error");
     }
+    // Cart exist then add + 1 quantity
     set({
       cart: cartItems.map((cartItem) =>
         cartItem.id === exist.id
