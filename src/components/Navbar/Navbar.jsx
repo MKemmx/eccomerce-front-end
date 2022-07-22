@@ -30,7 +30,7 @@ const Navbar = () => {
           // className={!showNavbar ? "menu-container" : "menu-container active"}
         >
           {menulists.map((list) => (
-            <Link to={`${list.to}`}>
+            <Link key={list.name} to={`${list.to}`}>
               <li className="list-item" key={list.name}>
                 {list.name}
               </li>

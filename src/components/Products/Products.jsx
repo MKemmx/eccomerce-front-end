@@ -57,7 +57,11 @@ const Products = () => {
             className="category-selector"
           >
             {categories.map((category) => (
-              <option lassName="category-option" value={category}>
+              <option
+                key={category}
+                lassName="category-option"
+                value={category}
+              >
                 {category}
               </option>
             ))}
@@ -69,7 +73,7 @@ const Products = () => {
           {selectedCategory === "all" && (
             <>
               {data.map((item) => (
-                <Product item={item} />
+                <Product key={item.id} item={item} />
               ))}
             </>
           )}
@@ -77,7 +81,7 @@ const Products = () => {
           {data
             .filter((product) => product.category === selectedCategory)
             .map((item) => (
-              <Product item={item} />
+              <Product key={item.id} item={item} />
             ))}
         </AnimatePresence>
       </motion.div>

@@ -4,7 +4,7 @@ import "./LoadingCSS.css";
 const Loading = () => {
   return (
     <div className="loading-container">
-      <div class="bounce">
+      <div className="bounce">
         <div></div>
         <div></div>
         <div></div>
